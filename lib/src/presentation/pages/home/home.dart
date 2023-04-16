@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:trainer_promoter/src/application/providers/providers.dart';
-import 'package:trainer_promoter/src/domain/core/core.dart';
-import 'package:trainer_promoter/src/domain/player_filter/player_filter.dart';
+import 'package:trainer_promoter/src/domain/entities/core/core.dart';
+import 'package:trainer_promoter/src/domain/entities/player_filter/player_filter.dart';
 import 'package:trainer_promoter/src/presentation/pages/home/widgets/players_search_bar.dart';
 import 'package:trainer_promoter/src/presentation/pages/home/widgets/userTile.dart';
 

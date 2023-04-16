@@ -3,7 +3,7 @@ import "package:flutter/material.dart";
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:trainer_promoter/src/application/providers/providers.dart';
-import 'package:trainer_promoter/src/domain/player_filter/player_filter.dart';
+import 'package:trainer_promoter/src/domain/entities/player_filter/player_filter.dart';
 
 class PlayerSearchBar extends ConsumerStatefulWidget {
   const PlayerSearchBar({Key? key}) : super(key: key);

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterfire_ui/auth.dart';
+import 'package:trainer_promoter/src/application/providers/providers.dart';
 
 class LoginPage extends ConsumerWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -8,7 +9,16 @@ class LoginPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(title: Text("Iniciar Sesión")),
+      appBar: AppBar(
+        title: Text("Iniciar Sesión"),
+        actions: [
+          IconButton(
+              onPressed: () {
+                ref.read(authServiceProvider).logout();
+              },
+              icon: const Icon(Icons.logout))
+        ],
+      ),
       body: SignInScreen(
           subtitleBuilder: (context, action) {
             return Padding(
@@ -45,7 +55,7 @@ class LoginPage extends ConsumerWidget {
               child: Image.asset("assets/images/logo.png"),
             );
           },
-          providerConfigs: [
+          providerConfigs: const [
             GoogleProviderConfiguration(
                 clientId:
                     "107114791691-3atrfkldi4feffc0kq3af39po7mg2icr.apps.googleusercontent.com"),

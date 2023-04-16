@@ -32,7 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-# firebase dependencies
+  # firebase dependencies
   firebase_core: ^2.3.0
   firebase_auth: ^4.1.5
   cloud_functions: ^4.0.5
@@ -44,17 +44,13 @@ dependencies:
   flutter_riverpod: ^2.1.1
   google_sign_in: ^5.4.2
 
-
-
-  #state management
-  flutter_bloc: ^8.1.1
-  
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_slidable: ^2.0.0
   font_awesome_flutter: ^10.3.0
   nb_utils: ^4.6.25
+  firebase_ui_auth: ^1.2.1
 
 dev_dependencies:
   flutter_test:
@@ -65,17 +61,16 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-#default flutter 2.5 skeleton linting.... duh....
+  #default flutter 2.5 skeleton linting.... duh....
   flutter_lints: ^2.0.1
 
-  #guess what this package does...  
+  #guess what this package does...
   change_app_package_name: ^1.1.0
   #flutter pub run change_app_package_name:main com.new.package.name
-  
+
   #generate app launcher icons
   flutter_launcher_icons: ^0.11.0
   #flutter pub run flutter_launcher_icons:main
-
 
   #code generation
   freezed: ^2.1.1
@@ -91,7 +86,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -102,9 +96,8 @@ flutter:
     - assets/images/
 
 flutter_icons:
-  image_path: "assets/icon/logo.png"
-  android: true 
-  adaptive_icon_background: "#FFFFFF" 
-  adaptive_icon_foreground: "assets/icon/logo.png" 
+  image_path: 'assets/icon/logo.png'
+  android: true
+  adaptive_icon_background: '#FFFFFF'
+  adaptive_icon_foreground: 'assets/icon/logo.png'
   remove_alpha_ios: true
-

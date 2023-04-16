@@ -7,10 +7,10 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:trainer_promoter/src/application/state_notifiers/auth_notifier.dart';
 import 'package:trainer_promoter/src/application/state_notifiers/core_notifier.dart';
 import 'package:trainer_promoter/src/application/state_notifiers/player_filter_notifier.dart';
-import 'package:trainer_promoter/src/domain/auth/auth.dart';
-import 'package:trainer_promoter/src/domain/core/core.dart';
-import 'package:trainer_promoter/src/domain/player_filter/player_filter.dart';
-import 'package:trainer_promoter/src/infrastructure/services/auth/auth_service.dart';
+import 'package:trainer_promoter/src/domain/entities/auth/auth.dart';
+import 'package:trainer_promoter/src/domain/entities/core/core.dart';
+import 'package:trainer_promoter/src/domain/entities/player_filter/player_filter.dart';
+import 'package:trainer_promoter/src/data/services/auth/auth_service.dart';
 
 final firebaseAuthProvider =
     Provider<FirebaseAuth>((ref) => FirebaseAuth.instance);
@@ -39,16 +39,13 @@ final authStateProvider = StreamProvider<User?>((ref) {
 
 final coreProvider = StateNotifierProvider<CoreNotifier, Core>(
   (ref) {
-    return ref.watch(authStateProvider).when(
-          data: (user) => CoreNotifier(ref),
-          error: (error, stackTrace) {
-            print(error);
-            print(stackTrace);
-
-            return CoreNotifier(ref);
-          },
-          loading: () => CoreNotifier(ref),
-        );
+    print("coreProviderinit");
+    return ref.watch(authControllerProvider).when(
+        unAuthenticated: () => CoreNotifier(ref),
+        loading: () => CoreNotifier(ref),
+        authenticated: () => CoreNotifier(ref),
+        notGodmodeError: () => CoreNotifier(ref),
+        error: (_) => CoreNotifier(ref));
   },
 );
 

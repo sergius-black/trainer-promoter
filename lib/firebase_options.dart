@@ -53,7 +53,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDKGPAKFKbc_MvPhrwJgXKPM2e_a3k5J4I',
+    apiKey: 'AIzaSyDpTkL7YazcujKyBDNMgSMP1fvJR_GB7qw',
     appId: '1:107114791691:android:82163ebdc7e7e0cea1d80e',
     messagingSenderId: '107114791691',
     projectId: 'tutrainer',

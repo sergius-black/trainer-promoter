@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:trainer_promoter/src/application/providers/providers.dart';
-import 'package:trainer_promoter/src/domain/core/core.dart';
+import 'package:trainer_promoter/src/domain/entities/core/core.dart';
 
 class AuthService {
   AuthService(this.ref) {
@@ -24,16 +24,25 @@ class AuthService {
     return auth.currentUser?.uid;
   }
 
+  Future<void> elevate() async {
+    try {
+      HttpsCallable callable = functions.httpsCallable('promoteGod');
+      await callable();
+
+      //get google credentials
+
+      logout();
+    } catch (err) {
+      print(err);
+    }
+  }
+
   //login with email and password
-  Future<void> login(String email, String password) async {
+  Future<void> loginWithEmailAndPassword(String email, String password) async {
     try {
       UserCredential user = await auth.signInWithEmailAndPassword(
           email: email, password: password);
       //get users custom claims
-      IdTokenResult tokenResult = await user.user!.getIdTokenResult();
-      if (tokenResult.claims?['godmode'] != true) {
-        logout();
-      }
     } on FirebaseAuthException catch (e) {
       print('Failed with error code: ${e.code}');
       print(e.message);
@@ -43,6 +52,7 @@ class AuthService {
   Future<void> logout() async {
     try {
       print("logout");
+      print(auth.currentUser!.providerData);
       await googleSignIn.disconnect();
       await auth.signOut();
     } catch (err) {
@@ -56,9 +66,7 @@ class AuthService {
     try {
       HttpsCallable callable = functions.httpsCallable('listAllUsers');
       final response = await callable();
-      print(response.data);
       List<BasicUser> users = response.data["users"].map<BasicUser>((user) {
-        print(user);
         var userMap = Map<String, dynamic>.from(user);
         return BasicUser.fromJson(userMap);
       }).toList();

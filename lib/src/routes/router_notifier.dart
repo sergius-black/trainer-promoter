@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:trainer_promoter/src/application/providers/providers.dart';
-import 'package:trainer_promoter/src/domain/auth/auth.dart';
-import 'package:trainer_promoter/src/domain/core/core.dart';
+import 'package:trainer_promoter/src/data/services/auth/auth_service.dart';
+import 'package:trainer_promoter/src/domain/entities/auth/auth.dart';
+import 'package:trainer_promoter/src/domain/entities/core/core.dart';
 import 'package:trainer_promoter/src/presentation/pages/home/home.dart';
 import 'package:trainer_promoter/src/presentation/pages/login/login_page.dart';
 import 'package:trainer_promoter/src/presentation/pages/login/not_godmode_error.dart';
@@ -21,18 +21,18 @@ class RouterNotifier extends ChangeNotifier {
           path: "/",
           name: "home",
           builder: (context, state) {
-            return HomeScreen();
+            return const HomeScreen();
           },
         ),
         GoRoute(
           path: "/login",
           name: "login",
-          builder: (context, state) => LoginPage(),
+          builder: (context, state) => const LoginPage(),
         ),
         GoRoute(
           path: "/not-godmode-error",
           name: "not-godmode-error",
-          builder: (context, state) => NotGodmodeError(),
+          builder: (context, state) => const NotGodmodeError(),
         ),
       ];
 
@@ -44,9 +44,12 @@ class RouterNotifier extends ChangeNotifier {
     final bool loggingIn = state.location == "/login";
     final bool goingNotGodmodeError = state.location == "/not-godmode-error";
 
-    // final bool goingHome = state.location == "/";
-
-    final Core core = ref.read(coreProvider);
+    print(loginState);
+    // return "/not-godmode-error";
+    if (loginState is LoginStateNotGodmodeError) {
+      print("goingNotGodmodeError: $goingNotGodmodeError");
+      return "/not-godmode-error";
+    }
 
     if (loginState is LoginStateAuthenticated) {
       try {

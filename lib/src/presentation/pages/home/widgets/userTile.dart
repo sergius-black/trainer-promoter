@@ -6,7 +6,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:trainer_promoter/src/application/providers/providers.dart';
-import 'package:trainer_promoter/src/domain/core/core.dart';
+import 'package:trainer_promoter/src/domain/entities/core/core.dart';
 
 class UserTile extends ConsumerStatefulWidget {
   final BasicUser user;

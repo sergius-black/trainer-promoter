@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:trainer_promoter/src/domain/core/core.dart';
+import 'package:trainer_promoter/src/domain/entities/core/core.dart';
 
 part 'player_filter.freezed.dart';
 

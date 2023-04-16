@@ -21,6 +21,7 @@ mixin _$LoginState {
     required TResult Function() unAuthenticated,
     required TResult Function() loading,
     required TResult Function() authenticated,
+    required TResult Function() notGodmodeError,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +30,7 @@ mixin _$LoginState {
     TResult? Function()? unAuthenticated,
     TResult? Function()? loading,
     TResult? Function()? authenticated,
+    TResult? Function()? notGodmodeError,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +39,7 @@ mixin _$LoginState {
     TResult Function()? unAuthenticated,
     TResult Function()? loading,
     TResult Function()? authenticated,
+    TResult Function()? notGodmodeError,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -46,6 +49,7 @@ mixin _$LoginState {
     required TResult Function(LoginStateUnAuthenticated value) unAuthenticated,
     required TResult Function(LoginStateLoading value) loading,
     required TResult Function(LoginStateAuthenticated value) authenticated,
+    required TResult Function(LoginStateNotGodmodeError value) notGodmodeError,
     required TResult Function(LoginStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +58,7 @@ mixin _$LoginState {
     TResult? Function(LoginStateUnAuthenticated value)? unAuthenticated,
     TResult? Function(LoginStateLoading value)? loading,
     TResult? Function(LoginStateAuthenticated value)? authenticated,
+    TResult? Function(LoginStateNotGodmodeError value)? notGodmodeError,
     TResult? Function(LoginStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +67,7 @@ mixin _$LoginState {
     TResult Function(LoginStateUnAuthenticated value)? unAuthenticated,
     TResult Function(LoginStateLoading value)? loading,
     TResult Function(LoginStateAuthenticated value)? authenticated,
+    TResult Function(LoginStateNotGodmodeError value)? notGodmodeError,
     TResult Function(LoginStateError value)? error,
     required TResult orElse(),
   }) =>
@@ -129,6 +135,7 @@ class _$LoginStateUnAuthenticated implements LoginStateUnAuthenticated {
     required TResult Function() unAuthenticated,
     required TResult Function() loading,
     required TResult Function() authenticated,
+    required TResult Function() notGodmodeError,
     required TResult Function(String error) error,
   }) {
     return unAuthenticated();
@@ -140,6 +147,7 @@ class _$LoginStateUnAuthenticated implements LoginStateUnAuthenticated {
     TResult? Function()? unAuthenticated,
     TResult? Function()? loading,
     TResult? Function()? authenticated,
+    TResult? Function()? notGodmodeError,
     TResult? Function(String error)? error,
   }) {
     return unAuthenticated?.call();
@@ -151,6 +159,7 @@ class _$LoginStateUnAuthenticated implements LoginStateUnAuthenticated {
     TResult Function()? unAuthenticated,
     TResult Function()? loading,
     TResult Function()? authenticated,
+    TResult Function()? notGodmodeError,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -166,6 +175,7 @@ class _$LoginStateUnAuthenticated implements LoginStateUnAuthenticated {
     required TResult Function(LoginStateUnAuthenticated value) unAuthenticated,
     required TResult Function(LoginStateLoading value) loading,
     required TResult Function(LoginStateAuthenticated value) authenticated,
+    required TResult Function(LoginStateNotGodmodeError value) notGodmodeError,
     required TResult Function(LoginStateError value) error,
   }) {
     return unAuthenticated(this);
@@ -177,6 +187,7 @@ class _$LoginStateUnAuthenticated implements LoginStateUnAuthenticated {
     TResult? Function(LoginStateUnAuthenticated value)? unAuthenticated,
     TResult? Function(LoginStateLoading value)? loading,
     TResult? Function(LoginStateAuthenticated value)? authenticated,
+    TResult? Function(LoginStateNotGodmodeError value)? notGodmodeError,
     TResult? Function(LoginStateError value)? error,
   }) {
     return unAuthenticated?.call(this);
@@ -188,6 +199,7 @@ class _$LoginStateUnAuthenticated implements LoginStateUnAuthenticated {
     TResult Function(LoginStateUnAuthenticated value)? unAuthenticated,
     TResult Function(LoginStateLoading value)? loading,
     TResult Function(LoginStateAuthenticated value)? authenticated,
+    TResult Function(LoginStateNotGodmodeError value)? notGodmodeError,
     TResult Function(LoginStateError value)? error,
     required TResult orElse(),
   }) {
@@ -243,6 +255,7 @@ class _$LoginStateLoading implements LoginStateLoading {
     required TResult Function() unAuthenticated,
     required TResult Function() loading,
     required TResult Function() authenticated,
+    required TResult Function() notGodmodeError,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -254,6 +267,7 @@ class _$LoginStateLoading implements LoginStateLoading {
     TResult? Function()? unAuthenticated,
     TResult? Function()? loading,
     TResult? Function()? authenticated,
+    TResult? Function()? notGodmodeError,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -265,6 +279,7 @@ class _$LoginStateLoading implements LoginStateLoading {
     TResult Function()? unAuthenticated,
     TResult Function()? loading,
     TResult Function()? authenticated,
+    TResult Function()? notGodmodeError,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -280,6 +295,7 @@ class _$LoginStateLoading implements LoginStateLoading {
     required TResult Function(LoginStateUnAuthenticated value) unAuthenticated,
     required TResult Function(LoginStateLoading value) loading,
     required TResult Function(LoginStateAuthenticated value) authenticated,
+    required TResult Function(LoginStateNotGodmodeError value) notGodmodeError,
     required TResult Function(LoginStateError value) error,
   }) {
     return loading(this);
@@ -291,6 +307,7 @@ class _$LoginStateLoading implements LoginStateLoading {
     TResult? Function(LoginStateUnAuthenticated value)? unAuthenticated,
     TResult? Function(LoginStateLoading value)? loading,
     TResult? Function(LoginStateAuthenticated value)? authenticated,
+    TResult? Function(LoginStateNotGodmodeError value)? notGodmodeError,
     TResult? Function(LoginStateError value)? error,
   }) {
     return loading?.call(this);
@@ -302,6 +319,7 @@ class _$LoginStateLoading implements LoginStateLoading {
     TResult Function(LoginStateUnAuthenticated value)? unAuthenticated,
     TResult Function(LoginStateLoading value)? loading,
     TResult Function(LoginStateAuthenticated value)? authenticated,
+    TResult Function(LoginStateNotGodmodeError value)? notGodmodeError,
     TResult Function(LoginStateError value)? error,
     required TResult orElse(),
   }) {
@@ -358,6 +376,7 @@ class _$LoginStateAuthenticated implements LoginStateAuthenticated {
     required TResult Function() unAuthenticated,
     required TResult Function() loading,
     required TResult Function() authenticated,
+    required TResult Function() notGodmodeError,
     required TResult Function(String error) error,
   }) {
     return authenticated();
@@ -369,6 +388,7 @@ class _$LoginStateAuthenticated implements LoginStateAuthenticated {
     TResult? Function()? unAuthenticated,
     TResult? Function()? loading,
     TResult? Function()? authenticated,
+    TResult? Function()? notGodmodeError,
     TResult? Function(String error)? error,
   }) {
     return authenticated?.call();
@@ -380,6 +400,7 @@ class _$LoginStateAuthenticated implements LoginStateAuthenticated {
     TResult Function()? unAuthenticated,
     TResult Function()? loading,
     TResult Function()? authenticated,
+    TResult Function()? notGodmodeError,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -395,6 +416,7 @@ class _$LoginStateAuthenticated implements LoginStateAuthenticated {
     required TResult Function(LoginStateUnAuthenticated value) unAuthenticated,
     required TResult Function(LoginStateLoading value) loading,
     required TResult Function(LoginStateAuthenticated value) authenticated,
+    required TResult Function(LoginStateNotGodmodeError value) notGodmodeError,
     required TResult Function(LoginStateError value) error,
   }) {
     return authenticated(this);
@@ -406,6 +428,7 @@ class _$LoginStateAuthenticated implements LoginStateAuthenticated {
     TResult? Function(LoginStateUnAuthenticated value)? unAuthenticated,
     TResult? Function(LoginStateLoading value)? loading,
     TResult? Function(LoginStateAuthenticated value)? authenticated,
+    TResult? Function(LoginStateNotGodmodeError value)? notGodmodeError,
     TResult? Function(LoginStateError value)? error,
   }) {
     return authenticated?.call(this);
@@ -417,6 +440,7 @@ class _$LoginStateAuthenticated implements LoginStateAuthenticated {
     TResult Function(LoginStateUnAuthenticated value)? unAuthenticated,
     TResult Function(LoginStateLoading value)? loading,
     TResult Function(LoginStateAuthenticated value)? authenticated,
+    TResult Function(LoginStateNotGodmodeError value)? notGodmodeError,
     TResult Function(LoginStateError value)? error,
     required TResult orElse(),
   }) {
@@ -429,6 +453,128 @@ class _$LoginStateAuthenticated implements LoginStateAuthenticated {
 
 abstract class LoginStateAuthenticated implements LoginState {
   const factory LoginStateAuthenticated() = _$LoginStateAuthenticated;
+}
+
+/// @nodoc
+abstract class _$$LoginStateNotGodmodeErrorCopyWith<$Res> {
+  factory _$$LoginStateNotGodmodeErrorCopyWith(
+          _$LoginStateNotGodmodeError value,
+          $Res Function(_$LoginStateNotGodmodeError) then) =
+      __$$LoginStateNotGodmodeErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoginStateNotGodmodeErrorCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginStateNotGodmodeError>
+    implements _$$LoginStateNotGodmodeErrorCopyWith<$Res> {
+  __$$LoginStateNotGodmodeErrorCopyWithImpl(_$LoginStateNotGodmodeError _value,
+      $Res Function(_$LoginStateNotGodmodeError) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoginStateNotGodmodeError implements LoginStateNotGodmodeError {
+  const _$LoginStateNotGodmodeError();
+
+  @override
+  String toString() {
+    return 'LoginState.notGodmodeError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoginStateNotGodmodeError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unAuthenticated,
+    required TResult Function() loading,
+    required TResult Function() authenticated,
+    required TResult Function() notGodmodeError,
+    required TResult Function(String error) error,
+  }) {
+    return notGodmodeError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? unAuthenticated,
+    TResult? Function()? loading,
+    TResult? Function()? authenticated,
+    TResult? Function()? notGodmodeError,
+    TResult? Function(String error)? error,
+  }) {
+    return notGodmodeError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unAuthenticated,
+    TResult Function()? loading,
+    TResult Function()? authenticated,
+    TResult Function()? notGodmodeError,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (notGodmodeError != null) {
+      return notGodmodeError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginStateUnAuthenticated value) unAuthenticated,
+    required TResult Function(LoginStateLoading value) loading,
+    required TResult Function(LoginStateAuthenticated value) authenticated,
+    required TResult Function(LoginStateNotGodmodeError value) notGodmodeError,
+    required TResult Function(LoginStateError value) error,
+  }) {
+    return notGodmodeError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoginStateUnAuthenticated value)? unAuthenticated,
+    TResult? Function(LoginStateLoading value)? loading,
+    TResult? Function(LoginStateAuthenticated value)? authenticated,
+    TResult? Function(LoginStateNotGodmodeError value)? notGodmodeError,
+    TResult? Function(LoginStateError value)? error,
+  }) {
+    return notGodmodeError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginStateUnAuthenticated value)? unAuthenticated,
+    TResult Function(LoginStateLoading value)? loading,
+    TResult Function(LoginStateAuthenticated value)? authenticated,
+    TResult Function(LoginStateNotGodmodeError value)? notGodmodeError,
+    TResult Function(LoginStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (notGodmodeError != null) {
+      return notGodmodeError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoginStateNotGodmodeError implements LoginState {
+  const factory LoginStateNotGodmodeError() = _$LoginStateNotGodmodeError;
 }
 
 /// @nodoc
@@ -498,6 +644,7 @@ class _$LoginStateError implements LoginStateError {
     required TResult Function() unAuthenticated,
     required TResult Function() loading,
     required TResult Function() authenticated,
+    required TResult Function() notGodmodeError,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -509,6 +656,7 @@ class _$LoginStateError implements LoginStateError {
     TResult? Function()? unAuthenticated,
     TResult? Function()? loading,
     TResult? Function()? authenticated,
+    TResult? Function()? notGodmodeError,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -520,6 +668,7 @@ class _$LoginStateError implements LoginStateError {
     TResult Function()? unAuthenticated,
     TResult Function()? loading,
     TResult Function()? authenticated,
+    TResult Function()? notGodmodeError,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -535,6 +684,7 @@ class _$LoginStateError implements LoginStateError {
     required TResult Function(LoginStateUnAuthenticated value) unAuthenticated,
     required TResult Function(LoginStateLoading value) loading,
     required TResult Function(LoginStateAuthenticated value) authenticated,
+    required TResult Function(LoginStateNotGodmodeError value) notGodmodeError,
     required TResult Function(LoginStateError value) error,
   }) {
     return error(this);
@@ -546,6 +696,7 @@ class _$LoginStateError implements LoginStateError {
     TResult? Function(LoginStateUnAuthenticated value)? unAuthenticated,
     TResult? Function(LoginStateLoading value)? loading,
     TResult? Function(LoginStateAuthenticated value)? authenticated,
+    TResult? Function(LoginStateNotGodmodeError value)? notGodmodeError,
     TResult? Function(LoginStateError value)? error,
   }) {
     return error?.call(this);
@@ -557,6 +708,7 @@ class _$LoginStateError implements LoginStateError {
     TResult Function(LoginStateUnAuthenticated value)? unAuthenticated,
     TResult Function(LoginStateLoading value)? loading,
     TResult Function(LoginStateAuthenticated value)? authenticated,
+    TResult Function(LoginStateNotGodmodeError value)? notGodmodeError,
     TResult Function(LoginStateError value)? error,
     required TResult orElse(),
   }) {
